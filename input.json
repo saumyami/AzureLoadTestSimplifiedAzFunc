@@ -1,0 +1,41 @@
+{
+  "subscriptionId": "edf1e7b0-efca-4b92-b5a4-fa5edf405ba7",
+  "resourceGroup": "Hackathon24",
+  "azureLoadTestingResourceName": "LoadTestingSimplified",
+  "loadTestRuns": [
+    {
+      "displayName": "SmallTenantQuery",
+      "description": "Query for scope tag analysis on small tenant",
+      "testId": "looprun",
+      "loadTestConfiguration": {
+        "engineInstances": 1,
+        "splitAllCSVs": true
+      },
+      "environmentVariables": {
+        "bearerToken": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImtXYmthYTZxczh3c1RuQndpaU5ZT2hIYm5BdyIsImtpZCI6ImtXYmthYTZxczh3c1RuQndpaU5ZT2hIYm5BdyJ9.eyJhdWQiOiJodHRwczovL2NsdXN0ZXJmb3Jsb2FkdGVzdHBhcnQuc291dGhlYXN0YXNpYS5rdXN0by53aW5kb3dzLm5ldCIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0Ny8iLCJpYXQiOjE3MDcyOTczNTAsIm5iZiI6MTcwNzI5NzM1MCwiZXhwIjoxNzA3MzAyNjEwLCJhY3IiOiIxIiwiYWlvIjoiQVlRQWUvOFZBQUFBdmZnaytXdzBnT1pGZ3hvMnhrKytycXgzWlFURW15eC94ZWdFczdJS1RvV1MrcGsrRlVmd2ZSUmtaMU1tRkVjaXFCVWZzSWxXZEdzTDlKU2lWQmR6NnBRd1BrY2NTWXZDcHNHcWpsTG1pUVhGVEtjemRIS1pDelBSdjZXa0FxWDVjeDczUDJ5T0ZKRGlVVFYrelh1N1pnaE1VelpwMDlQa1hHSk42MzRIY0pJPSIsImFtciI6WyJyc2EiLCJtZmEiXSwiYXBwaWQiOiIwNGIwNzc5NS04ZGRiLTQ2MWEtYmJlZS0wMmY5ZTFiZjdiNDYiLCJhcHBpZGFjciI6IjAiLCJkZXZpY2VpZCI6IjYwOWU1Y2Q5LTg5ZjItNDg0My04ODAwLTEyZWZmMTgxNDIwNCIsImZhbWlseV9uYW1lIjoiTWl0dGFsIiwiZ2l2ZW5fbmFtZSI6IlNhdW15YSIsImlwYWRkciI6IjI0MDQ6ZjgwMTo4MDI4OjM6ZTk3OmU5Yjk6Y2RjOTphNjA4IiwibmFtZSI6IlNhdW15YSBNaXR0YWwiLCJvaWQiOiI4ZGJhZmFmZC1kNDM2LTQzNzYtOGM2Zi0yNmZmYWFjMWUzMmEiLCJvbnByZW1fc2lkIjoiUy0xLTUtMjEtMjEyNzUyMTE4NC0xNjA0MDEyOTIwLTE4ODc5Mjc1MjctNzMxOTM3MTAiLCJwdWlkIjoiMTAwMzIwMDMxOTJEOTI5OSIsInJoIjoiMC5BUm9BdjRqNWN2R0dyMEdScXkxODBCSGJSM2ZxUmljQ1IwVkxnTW84bC1hQTZMY2FBSjguIiwic2NwIjoidXNlcl9pbXBlcnNvbmF0aW9uIiwic3ViIjoiVUstMmV4OGsyRTVOaWJPTC10OFp1aUdGeFhERTdtMTFBbUpJc1VTb3RTZyIsInRlbmFudF9jdHJ5IjoiVVMiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiV1ciLCJ0aWQiOiI3MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDciLCJ1bmlxdWVfbmFtZSI6InNhdW15YW1pdHRhbEBtaWNyb3NvZnQuY29tIiwidXBuIjoic2F1bXlhbWl0dGFsQG1pY3Jvc29mdC5jb20iLCJ1dGkiOiJybkMtM0F1WjNrR3VzclNaNmZNLUFBIiwidmVyIjoiMS4wIiwieG1zX3BkbCI6IkFQQyJ9.qHjkkUh1KfjKw5JhLbblxrwcKsngHLwPAOTPI2wU0l9fvXi1L85TuYTcV5UNzBVA-im9_QAMAzt99b4JOxLSlFJiAAy3LSSzrFFB2-Sug8FyhzfhU6wkYSeo6AWn78U8noNGXoAAJmG12rmx7WWfhvGFm8OiUrSrDtrJ1eTdsYqwJrZWssuDtI4IZ8X_-JG8CoDkFdF_0UWb9QonWistGg0gfaRsoZ1L_71aerQL0-j2NtJ8rwzehBnuY1PWjTD5wiQLhFbGcLOJgTxJUEhMI5_ltnoG9rSzpcitvxvKV6pqgVKbuwejQBPFnzGyPcNcCsJh395iZ_bUwrC8TvVaRA",
+        "serverName": "clusterforloadtestpart.southeastasia.kusto.windows.net",
+        "queryToTestData": "let LogicalDrive = view(){external_table('LogicalDriveData')\n| where firstTwoCharsTid == '5a'\n| where tenantId == '5a547f9f-f27e-4c46-bf54-c80f8987b439'};\nLogicalDrive\n| where (DiskDescription == 'CD-ROM Drive') \n| project DeviceId, FreeSpaceBytes \n| order by FreeSpaceBytes desc\n| count",
+        "databaseName": "lensdb",
+        "loopCount": "10",
+        "numberOfThreads": "1"
+      }
+    },
+    {
+      "displayName": "MediumTenantQuery",
+      "description": "Query for scope tag analysis on medium tenant",
+      "testId": "looprun",
+      "loadTestConfiguration": {
+        "engineInstances": 1,
+        "splitAllCSVs": true
+      },
+      "environmentVariables": {
+        "bearerToken": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImtXYmthYTZxczh3c1RuQndpaU5ZT2hIYm5BdyIsImtpZCI6ImtXYmthYTZxczh3c1RuQndpaU5ZT2hIYm5BdyJ9.eyJhdWQiOiJodHRwczovL2NsdXN0ZXJmb3Jsb2FkdGVzdHBhcnQuc291dGhlYXN0YXNpYS5rdXN0by53aW5kb3dzLm5ldCIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0Ny8iLCJpYXQiOjE3MDcyOTczNTAsIm5iZiI6MTcwNzI5NzM1MCwiZXhwIjoxNzA3MzAyNjEwLCJhY3IiOiIxIiwiYWlvIjoiQVlRQWUvOFZBQUFBdmZnaytXdzBnT1pGZ3hvMnhrKytycXgzWlFURW15eC94ZWdFczdJS1RvV1MrcGsrRlVmd2ZSUmtaMU1tRkVjaXFCVWZzSWxXZEdzTDlKU2lWQmR6NnBRd1BrY2NTWXZDcHNHcWpsTG1pUVhGVEtjemRIS1pDelBSdjZXa0FxWDVjeDczUDJ5T0ZKRGlVVFYrelh1N1pnaE1VelpwMDlQa1hHSk42MzRIY0pJPSIsImFtciI6WyJyc2EiLCJtZmEiXSwiYXBwaWQiOiIwNGIwNzc5NS04ZGRiLTQ2MWEtYmJlZS0wMmY5ZTFiZjdiNDYiLCJhcHBpZGFjciI6IjAiLCJkZXZpY2VpZCI6IjYwOWU1Y2Q5LTg5ZjItNDg0My04ODAwLTEyZWZmMTgxNDIwNCIsImZhbWlseV9uYW1lIjoiTWl0dGFsIiwiZ2l2ZW5fbmFtZSI6IlNhdW15YSIsImlwYWRkciI6IjI0MDQ6ZjgwMTo4MDI4OjM6ZTk3OmU5Yjk6Y2RjOTphNjA4IiwibmFtZSI6IlNhdW15YSBNaXR0YWwiLCJvaWQiOiI4ZGJhZmFmZC1kNDM2LTQzNzYtOGM2Zi0yNmZmYWFjMWUzMmEiLCJvbnByZW1fc2lkIjoiUy0xLTUtMjEtMjEyNzUyMTE4NC0xNjA0MDEyOTIwLTE4ODc5Mjc1MjctNzMxOTM3MTAiLCJwdWlkIjoiMTAwMzIwMDMxOTJEOTI5OSIsInJoIjoiMC5BUm9BdjRqNWN2R0dyMEdScXkxODBCSGJSM2ZxUmljQ1IwVkxnTW84bC1hQTZMY2FBSjguIiwic2NwIjoidXNlcl9pbXBlcnNvbmF0aW9uIiwic3ViIjoiVUstMmV4OGsyRTVOaWJPTC10OFp1aUdGeFhERTdtMTFBbUpJc1VTb3RTZyIsInRlbmFudF9jdHJ5IjoiVVMiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiV1ciLCJ0aWQiOiI3MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDciLCJ1bmlxdWVfbmFtZSI6InNhdW15YW1pdHRhbEBtaWNyb3NvZnQuY29tIiwidXBuIjoic2F1bXlhbWl0dGFsQG1pY3Jvc29mdC5jb20iLCJ1dGkiOiJybkMtM0F1WjNrR3VzclNaNmZNLUFBIiwidmVyIjoiMS4wIiwieG1zX3BkbCI6IkFQQyJ9.qHjkkUh1KfjKw5JhLbblxrwcKsngHLwPAOTPI2wU0l9fvXi1L85TuYTcV5UNzBVA-im9_QAMAzt99b4JOxLSlFJiAAy3LSSzrFFB2-Sug8FyhzfhU6wkYSeo6AWn78U8noNGXoAAJmG12rmx7WWfhvGFm8OiUrSrDtrJ1eTdsYqwJrZWssuDtI4IZ8X_-JG8CoDkFdF_0UWb9QonWistGg0gfaRsoZ1L_71aerQL0-j2NtJ8rwzehBnuY1PWjTD5wiQLhFbGcLOJgTxJUEhMI5_ltnoG9rSzpcitvxvKV6pqgVKbuwejQBPFnzGyPcNcCsJh395iZ_bUwrC8TvVaRA",
+        "serverName": "clusterforloadtestpart.southeastasia.kusto.windows.net",
+        "queryToTestData": "let LogicalDrive = view(){external_table('LogicalDriveData')\n| where firstTwoCharsTid == '5a'\n| where tenantId == '5a547f9f-f27e-4c46-bf54-c80f8987b439'};\nLogicalDrive\n| where (DiskDescription == 'CD-ROM Drive') \n| project DeviceId, FreeSpaceBytes \n| order by FreeSpaceBytes desc\n| count",
+        "databaseName": "lensdb",
+        "loopCount": "10",
+        "numberOfThreads": "1"
+      }
+    }
+  ]
+}
